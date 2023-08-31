@@ -1,5 +1,6 @@
 package list;
 
+
 public class ArrList<E> {
   // 인스턴스 변수
   private E a[];  // private E[] a;
@@ -12,6 +13,17 @@ public class ArrList<E> {
   // 연산 메서드
   public int size(){
     return size;
+  }
+
+  public <E> int indexOf(E e) {
+    int index = -1;
+    for (int i = 0; i < a.length; i++) {
+      if (e == a[i]) {
+        index = 1;
+        break;
+      }
+    }
+    return index;
   }
 
   public E get(int k){
@@ -68,7 +80,6 @@ public class ArrList<E> {
     }
     return tobeDeleted;
   }
-
 
 
   private void resize(int newSize){
